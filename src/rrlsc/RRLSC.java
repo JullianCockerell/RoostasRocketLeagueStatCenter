@@ -20,7 +20,7 @@ public class RRLSC {
     
     public static void main(String[] args) 
     {
-        
+        StartUpWindow win = new StartUpWindow();
     }
     
     
