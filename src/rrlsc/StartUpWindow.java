@@ -6,6 +6,8 @@
 package rrlsc;
 
 import java.awt.Image;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 
 
@@ -32,29 +34,36 @@ public class StartUpWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        StartButton = new javax.swing.JButton();
+        StartPanel = new javax.swing.JPanel();
         jTextField2 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         ID = new javax.swing.JLabel();
         GamesPlayed = new javax.swing.JLabel();
         WinP = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        test1 = new javax.swing.JLabel();
+        dis1 = new javax.swing.JLabel();
+        dis2 = new javax.swing.JLabel();
+        dis3 = new javax.swing.JLabel();
+        dis4 = new javax.swing.JLabel();
+        dis5 = new javax.swing.JLabel();
+        dis6 = new javax.swing.JLabel();
+        dis7 = new javax.swing.JLabel();
+        dis8 = new javax.swing.JLabel();
+        Logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
         setSize(new java.awt.Dimension(894, 483));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setText("Start");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        StartButton.setText("Start");
+        StartButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                StartButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 60, 90));
+        getContentPane().add(StartButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, 60, 40));
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,73 +83,130 @@ public class StartUpWindow extends javax.swing.JFrame {
 
         WinP.setText("Win %");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout StartPanelLayout = new javax.swing.GroupLayout(StartPanel);
+        StartPanel.setLayout(StartPanelLayout);
+        StartPanelLayout.setHorizontalGroup(
+            StartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StartPanelLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(ID)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(GamesPlayed)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(WinP)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        StartPanelLayout.setVerticalGroup(
+            StartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StartPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(StartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ID)
                     .addComponent(GamesPlayed)
-                    .addComponent(WinP))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField3))
-                .addGap(0, 2, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ID))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GamesPlayed))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(WinP))
-                .addGap(12, 12, 12))
+                    .addGroup(StartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(WinP)))
+                .addGap(76, 76, 76))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 180, -1));
+        getContentPane().add(StartPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rrlsc/RoostaStatCenterResize.png"))); // NOI18N
-        jLabel1.setMaximumSize(new java.awt.Dimension(864, 473));
-        jLabel1.setMinimumSize(new java.awt.Dimension(864, 473));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -80, 730, 420));
+        dis1.setText("jLabel1");
+        dis1.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.out.println("yay it worked!");
+                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true);
+            }
 
-        test1.setText("jLabel5");
-        getContentPane().add(test1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+        });
+        getContentPane().add(dis1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, -1, -1));
+
+        dis2.setText("jLabel2");
+        getContentPane().add(dis2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, -1, -1));
+
+        dis3.setText("jLabel3");
+        getContentPane().add(dis3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, -1, -1));
+
+        dis4.setText("jLabel4");
+        getContentPane().add(dis4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, -1, -1));
+
+        dis5.setText("jLabel5");
+        getContentPane().add(dis5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, -1, -1));
+
+        dis6.setText("jLabel6");
+        getContentPane().add(dis6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, -1, -1));
+
+        dis7.setText("jLabel7");
+        getContentPane().add(dis7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, -1, -1));
+
+        dis8.setText("jLabel8");
+        getContentPane().add(dis8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 310, -1, -1));
+
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rrlsc/RoostaStatCenterResize.png"))); // NOI18N
+        Logo.setMaximumSize(new java.awt.Dimension(864, 473));
+        Logo.setMinimumSize(new java.awt.Dimension(864, 473));
+        getContentPane().add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void StartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartButtonActionPerformed
         ImageIcon icon = new ImageIcon("/Users/julliancockerell/NetBeansProjects/RRLSC/test1.PNG");
         Image img = icon.getImage(); 
-        Image newimg = img.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
+        Image newimg = img.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
         icon = new ImageIcon(newimg);
-        test1.setIcon(icon);
-        test1.setText(null);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    
-    
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+        dis1.setIcon(icon);
+        dis1.setText(null);
+        dis2.setIcon(icon);
+        dis2.setText(null);
+        dis3.setIcon(icon);
+        dis3.setText(null);
+        dis4.setIcon(icon);
+        dis4.setText(null);
+        dis5.setIcon(icon);
+        dis5.setText(null);
+        dis6.setIcon(icon);
+        dis6.setText(null);
+        dis7.setIcon(icon);
+        dis7.setText(null);
+        dis8.setIcon(icon);
+        dis8.setText(null);
+    }//GEN-LAST:event_StartButtonActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -174,18 +240,26 @@ public class StartUpWindow extends javax.swing.JFrame {
                 new StartUpWindow().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel GamesPlayed;
     private javax.swing.JLabel ID;
+    private javax.swing.JLabel Logo;
+    private javax.swing.JButton StartButton;
+    private javax.swing.JPanel StartPanel;
     private javax.swing.JLabel WinP;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel dis1;
+    private javax.swing.JLabel dis2;
+    private javax.swing.JLabel dis3;
+    private javax.swing.JLabel dis4;
+    private javax.swing.JLabel dis5;
+    private javax.swing.JLabel dis6;
+    private javax.swing.JLabel dis7;
+    private javax.swing.JLabel dis8;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JLabel test1;
     // End of variables declaration//GEN-END:variables
 }
