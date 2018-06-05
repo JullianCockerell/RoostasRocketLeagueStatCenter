@@ -73,14 +73,16 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField2" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="ID" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="GamesPlayed" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField1" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                           <Component id="jTextField3" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                           <Component id="WinP" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jTextField2" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="ID" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="GamesPlayed" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField1" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
@@ -103,27 +105,33 @@
         </Component>
         <Component class="javax.swing.JLabel" name="ID">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Adobe Fan Heiti Std" size="13" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="ID"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="GamesPlayed">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Adobe Fan Heiti Std" size="13" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Games Played"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="WinP">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Adobe Fan Heiti Std" size="13" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Win %"/>
           </Properties>
         </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JLabel" name="dis1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
-      </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="dis1.addMouseListener(new MouseListener() {&#xa;            @Override&#xa;            public void mouseClicked(MouseEvent e) {&#xa;                System.out.println(&quot;yay it worked!&quot;);&#xa;                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true);&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mousePressed(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseReleased(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseEntered(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseExited(MouseEvent e) {&#xa;            }&#xa;        });"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="dis1.addMouseListener(new MouseListener() {&#xa;            @Override&#xa;            public void mouseClicked(MouseEvent e) {&#xa;                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, &quot;shots&quot;);&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mousePressed(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseReleased(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseEntered(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseExited(MouseEvent e) {&#xa;            }&#xa;        });"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -132,9 +140,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="dis2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel2"/>
-      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="dis2.addMouseListener(new MouseListener() {&#xa;            @Override&#xa;            public void mouseClicked(MouseEvent e) {&#xa;                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, &quot;assists&quot;);&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mousePressed(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseReleased(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseEntered(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseExited(MouseEvent e) {&#xa;            }&#xa;        });"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="290" y="150" width="-1" height="-1"/>
@@ -142,9 +150,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="dis3">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel3"/>
-      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="dis3.addMouseListener(new MouseListener() {&#xa;            @Override&#xa;            public void mouseClicked(MouseEvent e) {&#xa;                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, &quot;goals&quot;);&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mousePressed(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseReleased(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseEntered(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseExited(MouseEvent e) {&#xa;            }&#xa;        });"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="450" y="150" width="-1" height="-1"/>
@@ -152,9 +160,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="dis4">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel4"/>
-      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="dis4.addMouseListener(new MouseListener() {&#xa;            @Override&#xa;            public void mouseClicked(MouseEvent e) {&#xa;                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, &quot;saves&quot;);&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mousePressed(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseReleased(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseEntered(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseExited(MouseEvent e) {&#xa;            }&#xa;        });"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="610" y="150" width="-1" height="-1"/>
@@ -162,9 +170,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="dis5">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel5"/>
-      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="dis5.addMouseListener(new MouseListener() {&#xa;            @Override&#xa;            public void mouseClicked(MouseEvent e) {&#xa;                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, &quot;srankpoints&quot;);&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mousePressed(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseReleased(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseEntered(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseExited(MouseEvent e) {&#xa;            }&#xa;        });"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="130" y="310" width="-1" height="-1"/>
@@ -172,9 +180,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="dis6">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel6"/>
-      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="dis6.addMouseListener(new MouseListener() {&#xa;            @Override&#xa;            public void mouseClicked(MouseEvent e) {&#xa;                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, &quot;drankpoints&quot;);&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mousePressed(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseReleased(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseEntered(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseExited(MouseEvent e) {&#xa;            }&#xa;        });"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="290" y="310" width="-1" height="-1"/>
@@ -182,9 +190,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="dis7">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel7"/>
-      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="dis7.addMouseListener(new MouseListener() {&#xa;            @Override&#xa;            public void mouseClicked(MouseEvent e) {&#xa;                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, &quot;trankpoints&quot;);&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mousePressed(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseReleased(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseEntered(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseExited(MouseEvent e) {&#xa;            }&#xa;        });"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="450" y="310" width="-1" height="-1"/>
@@ -192,9 +200,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="dis8">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel8"/>
-      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="dis8.addMouseListener(new MouseListener() {&#xa;            @Override&#xa;            public void mouseClicked(MouseEvent e) {&#xa;                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, &quot;wins&quot;);&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mousePressed(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseReleased(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseEntered(MouseEvent e) {&#xa;            }&#xa;&#xa;            @Override&#xa;            public void mouseExited(MouseEvent e) {&#xa;            }&#xa;        });"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="610" y="310" width="-1" height="-1"/>
@@ -216,6 +224,13 @@
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="10" y="0" width="-1" height="250"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="990" y="500" width="20" height="10"/>
         </Constraint>
       </Constraints>
     </Component>

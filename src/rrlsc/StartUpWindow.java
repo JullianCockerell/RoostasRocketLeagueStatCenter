@@ -22,6 +22,26 @@ public class StartUpWindow extends javax.swing.JFrame {
      */
     public StartUpWindow() {
         initComponents();
+        this.setResizable(false);
+        
+        ImageIcon icons[] = new ImageIcon[8];
+        String links[] = new String[]{"/Users/julliancockerell/NetBeansProjects/RRLSC/hshots.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/hassists.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/hgoals.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/hsaves.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/hsrankpoints.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/hdrankpoints.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/htrankpoints.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/hwins.PNG"};
+        for(int i = 0; i < 8; i++)
+        {
+            ImageIcon icon = new ImageIcon(links[i]);
+            Image img = icon.getImage(); 
+            Image newimg = img.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+            icons[i] = new ImageIcon(newimg);
+        }
+        dis1.setIcon(icons[0]);
+        dis2.setIcon(icons[1]);
+        dis3.setIcon(icons[2]);
+        dis4.setIcon(icons[3]);
+        dis5.setIcon(icons[4]);
+        dis6.setIcon(icons[5]);
+        dis7.setIcon(icons[6]);
+        dis8.setIcon(icons[7]);
+        
         this.setVisible(true);
     }
 
@@ -51,6 +71,7 @@ public class StartUpWindow extends javax.swing.JFrame {
         dis7 = new javax.swing.JLabel();
         dis8 = new javax.swing.JLabel();
         Logo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -77,10 +98,13 @@ public class StartUpWindow extends javax.swing.JFrame {
             }
         });
 
+        ID.setFont(new java.awt.Font("Adobe Fan Heiti Std", 1, 13)); // NOI18N
         ID.setText("ID");
 
+        GamesPlayed.setFont(new java.awt.Font("Adobe Fan Heiti Std", 1, 13)); // NOI18N
         GamesPlayed.setText("Games Played");
 
+        WinP.setFont(new java.awt.Font("Adobe Fan Heiti Std", 1, 13)); // NOI18N
         WinP.setText("Win %");
 
         javax.swing.GroupLayout StartPanelLayout = new javax.swing.GroupLayout(StartPanel);
@@ -106,25 +130,24 @@ public class StartUpWindow extends javax.swing.JFrame {
             StartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(StartPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(StartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ID)
-                    .addComponent(GamesPlayed)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(StartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(StartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(WinP)))
+                        .addComponent(WinP))
+                    .addGroup(StartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ID)
+                        .addComponent(GamesPlayed)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(76, 76, 76))
         );
 
         getContentPane().add(StartPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, 40));
 
-        dis1.setText("jLabel1");
         dis1.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                System.out.println("yay it worked!");
-                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true);
+                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "shots");
             }
 
             @Override
@@ -145,56 +168,203 @@ public class StartUpWindow extends javax.swing.JFrame {
         });
         getContentPane().add(dis1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, -1, -1));
 
-        dis2.setText("jLabel2");
+        dis2.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "assists");
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+        });
         getContentPane().add(dis2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, -1, -1));
 
-        dis3.setText("jLabel3");
+        dis3.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "goals");
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+        });
         getContentPane().add(dis3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, -1, -1));
 
-        dis4.setText("jLabel4");
+        dis4.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "saves");
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+        });
         getContentPane().add(dis4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, -1, -1));
 
-        dis5.setText("jLabel5");
+        dis5.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "srankpoints");
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+        });
         getContentPane().add(dis5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, -1, -1));
 
-        dis6.setText("jLabel6");
+        dis6.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "drankpoints");
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+        });
         getContentPane().add(dis6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, -1, -1));
 
-        dis7.setText("jLabel7");
+        dis7.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "trankpoints");
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+        });
         getContentPane().add(dis7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, -1, -1));
 
-        dis8.setText("jLabel8");
+        dis8.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "wins");
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+        });
         getContentPane().add(dis8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 310, -1, -1));
 
         Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rrlsc/RoostaStatCenterResize.png"))); // NOI18N
         Logo.setMaximumSize(new java.awt.Dimension(864, 473));
         Logo.setMinimumSize(new java.awt.Dimension(864, 473));
         getContentPane().add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 250));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 500, 20, 10));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void StartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartButtonActionPerformed
-        ImageIcon icon = new ImageIcon("/Users/julliancockerell/NetBeansProjects/RRLSC/test1.PNG");
-        Image img = icon.getImage(); 
-        Image newimg = img.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
-        icon = new ImageIcon(newimg);
-        dis1.setIcon(icon);
-        dis1.setText(null);
-        dis2.setIcon(icon);
-        dis2.setText(null);
-        dis3.setIcon(icon);
-        dis3.setText(null);
-        dis4.setIcon(icon);
-        dis4.setText(null);
-        dis5.setIcon(icon);
-        dis5.setText(null);
-        dis6.setIcon(icon);
-        dis6.setText(null);
-        dis7.setIcon(icon);
-        dis7.setText(null);
-        dis8.setIcon(icon);
-        dis8.setText(null);
+        
+        ImageIcon icons[] = new ImageIcon[8];
+        String links[] = new String[]{"/Users/julliancockerell/NetBeansProjects/RRLSC/shots.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/assists.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/goals.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/saves.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/srankpoints.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/drankpoints.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/trankpoints.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/wins.PNG"};
+        for(int i = 0; i < 8; i++)
+        {
+            ImageIcon icon = new ImageIcon(links[i]);
+            Image img = icon.getImage(); 
+            Image newimg = img.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+            icons[i] = new ImageIcon(newimg);
+        }
+        dis1.setIcon(icons[0]);
+        dis2.setIcon(icons[1]);
+        dis3.setIcon(icons[2]);
+        dis4.setIcon(icons[3]);
+        dis5.setIcon(icons[4]);
+        dis6.setIcon(icons[5]);
+        dis7.setIcon(icons[6]);
+        dis8.setIcon(icons[7]);
+        
     }//GEN-LAST:event_StartButtonActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
@@ -258,6 +428,7 @@ public class StartUpWindow extends javax.swing.JFrame {
     private javax.swing.JLabel dis6;
     private javax.swing.JLabel dis7;
     private javax.swing.JLabel dis8;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
