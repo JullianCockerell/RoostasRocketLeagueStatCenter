@@ -9,6 +9,7 @@ import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
+import java.awt.Color;
 
 
 /**
@@ -17,11 +18,13 @@ import javax.swing.ImageIcon;
  */
 public class StartUpWindow extends javax.swing.JFrame {
 
-    /**
-     * Creates new form StartUpWindow
-     */
+    boolean startTriggered;
+    
     public StartUpWindow() {
         initComponents();
+        startTriggered = false;
+        Color bGround = new Color(252, 239, 219);
+        this.getContentPane().setBackground(bGround);
         this.setResizable(false);
         
         ImageIcon icons[] = new ImageIcon[8];
@@ -75,6 +78,7 @@ public class StartUpWindow extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
+        setBackground(new java.awt.Color(255, 216, 158));
         setSize(new java.awt.Dimension(894, 483));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -111,8 +115,8 @@ public class StartUpWindow extends javax.swing.JFrame {
         StartPanel.setLayout(StartPanelLayout);
         StartPanelLayout.setHorizontalGroup(
             StartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(StartPanelLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StartPanelLayout.createSequentialGroup()
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addComponent(ID)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -124,7 +128,7 @@ public class StartUpWindow extends javax.swing.JFrame {
                 .addComponent(WinP)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
         StartPanelLayout.setVerticalGroup(
             StartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,12 +146,12 @@ public class StartUpWindow extends javax.swing.JFrame {
                 .addGap(76, 76, 76))
         );
 
-        getContentPane().add(StartPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, 40));
+        getContentPane().add(StartPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(567, 10, 370, 40));
 
         dis1.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "shots");
+                if(startTriggered){GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "shots");}
             }
 
             @Override
@@ -171,7 +175,7 @@ public class StartUpWindow extends javax.swing.JFrame {
         dis2.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "assists");
+                if(startTriggered){GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "assists");}
             }
 
             @Override
@@ -195,7 +199,7 @@ public class StartUpWindow extends javax.swing.JFrame {
         dis3.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "goals");
+                if(startTriggered){GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "goals");}
             }
 
             @Override
@@ -219,7 +223,7 @@ public class StartUpWindow extends javax.swing.JFrame {
         dis4.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "saves");
+                if(startTriggered){GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "saves");}
             }
 
             @Override
@@ -243,7 +247,7 @@ public class StartUpWindow extends javax.swing.JFrame {
         dis5.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "srankpoints");
+                if(startTriggered){GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "srankpoints");}
             }
 
             @Override
@@ -267,7 +271,7 @@ public class StartUpWindow extends javax.swing.JFrame {
         dis6.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "drankpoints");
+                if(startTriggered){GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "drankpoints");}
             }
 
             @Override
@@ -291,7 +295,7 @@ public class StartUpWindow extends javax.swing.JFrame {
         dis7.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "trankpoints");
+                if(startTriggered){GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "trankpoints");}
             }
 
             @Override
@@ -315,7 +319,7 @@ public class StartUpWindow extends javax.swing.JFrame {
         dis8.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "wins");
+                if(startTriggered){GraphWindow gWin = new GraphWindow(StartUpWindow.this, true, "wins");}
             }
 
             @Override
@@ -336,17 +340,19 @@ public class StartUpWindow extends javax.swing.JFrame {
         });
         getContentPane().add(dis8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 310, -1, -1));
 
-        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rrlsc/RoostaStatCenterResize.png"))); // NOI18N
+        Logo.setBackground(new java.awt.Color(255, 216, 158));
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rrlsc/RoostaStatCenterResize2.png"))); // NOI18N
         Logo.setMaximumSize(new java.awt.Dimension(864, 473));
         Logo.setMinimumSize(new java.awt.Dimension(864, 473));
-        getContentPane().add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 250));
+        getContentPane().add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 500, 500));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 500, 20, 10));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void StartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartButtonActionPerformed
-        
+
+        startTriggered = true;
         ImageIcon icons[] = new ImageIcon[8];
         String links[] = new String[]{"/Users/julliancockerell/NetBeansProjects/RRLSC/shots.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/assists.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/goals.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/saves.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/srankpoints.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/drankpoints.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/trankpoints.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/wins.PNG"};
         for(int i = 0; i < 8; i++)
