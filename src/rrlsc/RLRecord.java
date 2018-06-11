@@ -6,21 +6,21 @@
 package rrlsc;
 
 public class RLRecord {
-    private int wins;
-    private int goals;
-    private int mvps;
-    private int saves;
-    private int shots;
-    private int assists;
-    private int sRankPoints;
-    private int sTier;
-    private int sDiv;
-    private int dRankPoints;
-    private int dTier;
-    private int dDiv;
-    private int tRankPoints;
-    private int tTier;
-    private int tDiv;
+    final private int wins;
+    final private int goals;
+    final private int mvps;
+    final private int saves;
+    final private int shots;
+    final private int assists;
+    final private int sRankPoints;
+    final private int sTier;
+    final private int sDiv;
+    final private int dRankPoints;
+    final private int dTier;
+    final private int dDiv;
+    final private int tRankPoints;
+    final private int tTier;
+    final private int tDiv;
     
     public RLRecord(int wins, int goals, int mvps, int saves, int shots, int assists, int sRankPoints, int sTier, int sDiv, int dRankPoints, int dTier, int dDiv, int tRankPoints, int tTier, int tDiv)
     {

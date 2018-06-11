@@ -11,7 +11,6 @@ import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 
-
 /**
  *
  * @author julliancockerell
@@ -24,7 +23,12 @@ public class StartUpWindow extends javax.swing.JFrame {
         initComponents();
         startTriggered = false;
         Color bGround = new Color(252, 239, 219);
+        Color startColor = new Color(196,123,73);
+        Color graphColor = new Color(249, 206, 130);
+        
+        this.StartPanel.setBackground(graphColor);
         this.getContentPane().setBackground(bGround);
+        this.GraphPanel.setBackground(graphColor);
         this.setResizable(false);
         
         ImageIcon icons[] = new ImageIcon[8];
@@ -58,13 +62,15 @@ public class StartUpWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         StartButton = new javax.swing.JButton();
-        StartPanel = new javax.swing.JPanel();
+        StartPanel = new RoundedPanel(4);
         jTextField2 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         ID = new javax.swing.JLabel();
         GamesPlayed = new javax.swing.JLabel();
         WinP = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        GraphPanel = new RoundedPanel(4);
         dis1 = new javax.swing.JLabel();
         dis2 = new javax.swing.JLabel();
         dis3 = new javax.swing.JLabel();
@@ -74,7 +80,6 @@ public class StartUpWindow extends javax.swing.JFrame {
         dis7 = new javax.swing.JLabel();
         dis8 = new javax.swing.JLabel();
         Logo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -115,8 +120,8 @@ public class StartUpWindow extends javax.swing.JFrame {
         StartPanel.setLayout(StartPanelLayout);
         StartPanelLayout.setHorizontalGroup(
             StartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StartPanelLayout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+            .addGroup(StartPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
                 .addComponent(ID)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -128,7 +133,7 @@ public class StartUpWindow extends javax.swing.JFrame {
                 .addComponent(WinP)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         StartPanelLayout.setVerticalGroup(
             StartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,8 +151,12 @@ public class StartUpWindow extends javax.swing.JFrame {
                 .addGap(76, 76, 76))
         );
 
-        getContentPane().add(StartPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(567, 10, 370, 40));
+        getContentPane().add(StartPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(557, 10, 380, 40));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 500, 30, 20));
 
+        GraphPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        dis1.setBackground(new java.awt.Color(138, 138, 138));
         dis1.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -170,7 +179,7 @@ public class StartUpWindow extends javax.swing.JFrame {
             public void mouseExited(MouseEvent e) {
             }
         });
-        getContentPane().add(dis1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, -1, -1));
+        GraphPanel.add(dis1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, 150));
 
         dis2.addMouseListener(new MouseListener() {
             @Override
@@ -194,7 +203,8 @@ public class StartUpWindow extends javax.swing.JFrame {
             public void mouseExited(MouseEvent e) {
             }
         });
-        getContentPane().add(dis2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, -1, -1));
+        dis2.setBackground(new java.awt.Color(138, 138, 138));
+        GraphPanel.add(dis2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 150, 150));
 
         dis3.addMouseListener(new MouseListener() {
             @Override
@@ -218,7 +228,8 @@ public class StartUpWindow extends javax.swing.JFrame {
             public void mouseExited(MouseEvent e) {
             }
         });
-        getContentPane().add(dis3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, -1, -1));
+        dis3.setBackground(new java.awt.Color(138, 138, 138));
+        GraphPanel.add(dis3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 150, 150));
 
         dis4.addMouseListener(new MouseListener() {
             @Override
@@ -242,7 +253,8 @@ public class StartUpWindow extends javax.swing.JFrame {
             public void mouseExited(MouseEvent e) {
             }
         });
-        getContentPane().add(dis4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, -1, -1));
+        dis4.setBackground(new java.awt.Color(138, 138, 138));
+        GraphPanel.add(dis4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 20, 150, 150));
 
         dis5.addMouseListener(new MouseListener() {
             @Override
@@ -266,7 +278,8 @@ public class StartUpWindow extends javax.swing.JFrame {
             public void mouseExited(MouseEvent e) {
             }
         });
-        getContentPane().add(dis5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, -1, -1));
+        dis5.setBackground(new java.awt.Color(138, 138, 138));
+        GraphPanel.add(dis5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 150, 150));
 
         dis6.addMouseListener(new MouseListener() {
             @Override
@@ -290,7 +303,8 @@ public class StartUpWindow extends javax.swing.JFrame {
             public void mouseExited(MouseEvent e) {
             }
         });
-        getContentPane().add(dis6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, -1, -1));
+        dis6.setBackground(new java.awt.Color(138, 138, 138));
+        GraphPanel.add(dis6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 150, 150));
 
         dis7.addMouseListener(new MouseListener() {
             @Override
@@ -314,7 +328,8 @@ public class StartUpWindow extends javax.swing.JFrame {
             public void mouseExited(MouseEvent e) {
             }
         });
-        getContentPane().add(dis7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, -1, -1));
+        dis7.setBackground(new java.awt.Color(138, 138, 138));
+        GraphPanel.add(dis7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 150, 150));
 
         dis8.addMouseListener(new MouseListener() {
             @Override
@@ -338,14 +353,16 @@ public class StartUpWindow extends javax.swing.JFrame {
             public void mouseExited(MouseEvent e) {
             }
         });
-        getContentPane().add(dis8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 310, -1, -1));
+        dis8.setBackground(new java.awt.Color(138, 138, 138));
+        GraphPanel.add(dis8, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 150, 150));
+
+        getContentPane().add(GraphPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 700, 360));
 
         Logo.setBackground(new java.awt.Color(255, 216, 158));
         Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rrlsc/RoostaStatCenterResize2.png"))); // NOI18N
         Logo.setMaximumSize(new java.awt.Dimension(864, 473));
         Logo.setMinimumSize(new java.awt.Dimension(864, 473));
         getContentPane().add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 500, 500));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 500, 20, 10));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -421,6 +438,7 @@ public class StartUpWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel GamesPlayed;
+    private javax.swing.JPanel GraphPanel;
     private javax.swing.JLabel ID;
     private javax.swing.JLabel Logo;
     private javax.swing.JButton StartButton;
