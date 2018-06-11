@@ -16,6 +16,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Collections;
 import java.util.HashMap;
 import javax.imageio.ImageIO;
 
@@ -78,11 +79,11 @@ public class RecordMap {
     
     
     //Converts serialized map in "records.ser" into substantiated HashMap object
-    HashMap deserializeMap()
+    void deserializeMap()
     {
         final String dir = System.getProperty("user.dir") + "/records.ser";
         File f = new File(dir);
-        System.out.println(dir);
+        //System.out.println(dir);
         HashMap<Integer, RLRecord> map = null;
         if(f.exists() && !f.isDirectory()) 
         { 
@@ -93,24 +94,23 @@ public class RecordMap {
                 map = (HashMap) ois.readObject();
                 ois.close();
                 fis.close();
+                recordMap = map;
+                maxInt = Collections.max(map.keySet());
+                System.out.println("Successfully deserialized.");
             }
             catch(IOException ioe)
             {
                 ioe.printStackTrace();
-                return null;
             }
             catch(ClassNotFoundException c)
             {
                 System.out.println("Class not found");
                 c.printStackTrace();
-                return null;
             }
-            return map;
         }
         else
         {
             System.out.println("File not found!");
-            return null;
         }
     }
    
@@ -225,7 +225,7 @@ public class RecordMap {
     
     
     //takes array of 5 values and draws appropiate graph
-    static Graphics2D drawGraph(int array[], Graphics2D win, int height, int width, int mapSize, int maxVal, int minVal, String title)
+    Graphics2D drawGraph(int array[], Graphics2D win, int height, int width, int mapSize, int maxVal, int minVal, String title)
     {
         int gap = (int)((width - 40.0) / (mapSize + 1));
         win.setPaint(Color.WHITE);
@@ -276,9 +276,21 @@ public class RecordMap {
     
     
     //converts coordinates for point placement
-    static int convertCo(int yLevel, int height)
+    int convertCo(int yLevel, int height)
     {
         return height - (20 + yLevel);
     }
     
+    void printLastRec()
+    {
+        if(recordMap != null)
+        {
+            RLRecord rec = (RLRecord) recordMap.get(maxInt);
+            if(rec != null) {System.out.println(rec.getWins());}
+        }
+        else
+        {
+            System.out.println("Map is null!");
+        }
+    }
 }

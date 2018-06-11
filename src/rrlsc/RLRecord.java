@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 package rrlsc;
+import java.io.Serializable;
 
-public class RLRecord {
+public class RLRecord implements Serializable
+{
     final private int wins;
     final private int goals;
     final private int mvps;

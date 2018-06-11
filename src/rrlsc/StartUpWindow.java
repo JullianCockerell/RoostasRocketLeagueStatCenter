@@ -152,7 +152,7 @@ public class StartUpWindow extends javax.swing.JFrame {
         );
 
         getContentPane().add(StartPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(557, 10, 380, 40));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 500, 30, 20));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 520, 30, 20));
 
         GraphPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -368,25 +368,27 @@ public class StartUpWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void StartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartButtonActionPerformed
-
-        startTriggered = true;
-        ImageIcon icons[] = new ImageIcon[8];
-        String links[] = new String[]{"/Users/julliancockerell/NetBeansProjects/RRLSC/shots.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/assists.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/goals.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/saves.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/srankpoints.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/drankpoints.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/trankpoints.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/wins.PNG"};
-        for(int i = 0; i < 8; i++)
+        if(!startTriggered)
         {
-            ImageIcon icon = new ImageIcon(links[i]);
-            Image img = icon.getImage(); 
-            Image newimg = img.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
-            icons[i] = new ImageIcon(newimg);
+            startTriggered = true;
+            ImageIcon icons[] = new ImageIcon[8];
+            String links[] = new String[]{"/Users/julliancockerell/NetBeansProjects/RRLSC/shots.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/assists.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/goals.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/saves.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/srankpoints.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/drankpoints.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/trankpoints.PNG", "/Users/julliancockerell/NetBeansProjects/RRLSC/wins.PNG"};
+            for(int i = 0; i < 8; i++)
+            {
+                ImageIcon icon = new ImageIcon(links[i]);
+                Image img = icon.getImage(); 
+                Image newimg = img.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
+                icons[i] = new ImageIcon(newimg);
+            }
+            dis1.setIcon(icons[0]);
+            dis2.setIcon(icons[1]);
+            dis3.setIcon(icons[2]);
+            dis4.setIcon(icons[3]);
+            dis5.setIcon(icons[4]);
+            dis6.setIcon(icons[5]);
+            dis7.setIcon(icons[6]);
+            dis8.setIcon(icons[7]);
         }
-        dis1.setIcon(icons[0]);
-        dis2.setIcon(icons[1]);
-        dis3.setIcon(icons[2]);
-        dis4.setIcon(icons[3]);
-        dis5.setIcon(icons[4]);
-        dis6.setIcon(icons[5]);
-        dis7.setIcon(icons[6]);
-        dis8.setIcon(icons[7]);
         
     }//GEN-LAST:event_StartButtonActionPerformed
 
