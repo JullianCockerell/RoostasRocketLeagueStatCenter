@@ -27,13 +27,26 @@ import javax.imageio.ImageIO;
 public class RecordMap {
     HashMap recordMap;
     int maxInt;
+    double[] avgStats;
     
     public RecordMap()
     {
         recordMap = null;
+        avgStats = new double[]{0,0,0,0,0,0};
         maxInt = 0;
     }
     
+    //prints all values held in the avgStat array
+    void printAvgs()
+    {
+        for(int i = 0; i < 6; i++)
+        {
+            System.out.print(avgStats[i] + " ");
+        }
+        System.out.println("");
+    }
+    
+    //sets some basic template data for testing purposes
     void setTemplateData()
     {
         HashMap<Integer, RLRecord> hashMap = new HashMap<Integer, RLRecord>();
@@ -77,6 +90,50 @@ public class RecordMap {
         return true;
     }
     
+    //calculates avgStats array from scratch, cycling through all held records
+    void setupAvgStats()
+    {
+        if(maxInt != 0)
+        {
+            RLRecord record;
+            avgStats = new double[]{0,0,0,0,0,0};
+            for(int i = 0; i < maxInt; i++)
+            {
+                record = (RLRecord) recordMap.get(maxInt);
+                avgStats[0] = avgStats[0] + (record.getWins()/((double) maxInt));
+                avgStats[1] = avgStats[1] + (record.getGoals()/((double) maxInt));
+                avgStats[2] = avgStats[2] + (record.getMvps()/((double) maxInt));
+                avgStats[3] = avgStats[3] + (record.getSaves()/((double) maxInt));
+                avgStats[4] = avgStats[4] + (record.getShots()/((double) maxInt));
+                avgStats[5] = avgStats[5] + (record.getAssists()/((double) maxInt));
+            }
+        }
+        else
+        {
+            System.out.println("No records initialized...");
+        }
+    }
+    
+    //adds a specified record to recordmap, recalculates avgStats array, increments maxInt
+    void addRecordToMap(RLRecord record)
+    {
+        maxInt++;
+        recordMap.put(maxInt, record);
+        addLastRecordToAvg();
+    }
+    
+    //adds the last record in the RecordMap to avgStats array, should only be called by addRecordToMap
+    void addLastRecordToAvg()
+    {
+        double multiplier = ((maxInt - 1)/((double) maxInt));
+        RLRecord record = (RLRecord) recordMap.get(maxInt);
+        avgStats[0] = (avgStats[0]*multiplier) + (record.getWins()/(double) maxInt);
+        avgStats[1] = (avgStats[1]*multiplier) + (record.getGoals()/(double) maxInt);
+        avgStats[2] = (avgStats[2]*multiplier) + (record.getMvps()/(double) maxInt);
+        avgStats[3] = (avgStats[3]*multiplier) + (record.getSaves()/(double) maxInt);
+        avgStats[4] = (avgStats[4]*multiplier) + (record.getShots()/(double) maxInt);
+        avgStats[5] = (avgStats[5]*multiplier) + (record.getAssists()/(double) maxInt);
+    }
     
     //Converts serialized map in "records.ser" into substantiated HashMap object
     void deserializeMap()

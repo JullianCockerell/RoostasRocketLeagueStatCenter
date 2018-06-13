@@ -69,7 +69,7 @@ public class StartUpWindow extends javax.swing.JFrame {
         ID = new javax.swing.JLabel();
         GamesPlayed = new javax.swing.JLabel();
         WinP = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        screenHolder = new javax.swing.JLabel();
         GraphPanel = new RoundedPanel(4);
         dis1 = new javax.swing.JLabel();
         dis2 = new javax.swing.JLabel();
@@ -80,6 +80,16 @@ public class StartUpWindow extends javax.swing.JFrame {
         dis7 = new javax.swing.JLabel();
         dis8 = new javax.swing.JLabel();
         Logo = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        winDisplay = new javax.swing.JTextField();
+        tf5 = new javax.swing.JTextField();
+        tf6 = new javax.swing.JTextField();
+        tf7 = new javax.swing.JTextField();
+        tf8 = new javax.swing.JTextField();
+        tf9 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -94,6 +104,8 @@ public class StartUpWindow extends javax.swing.JFrame {
             }
         });
         getContentPane().add(StartButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, 60, 40));
+
+        StartPanel.setBackground(new java.awt.Color(0, 0, 0));
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,11 +164,13 @@ public class StartUpWindow extends javax.swing.JFrame {
         );
 
         getContentPane().add(StartPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(557, 10, 380, 40));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 520, 30, 20));
+        getContentPane().add(screenHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 520, 30, 20));
 
+        GraphPanel.setBackground(new java.awt.Color(0, 0, 0));
         GraphPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        dis1.setBackground(new java.awt.Color(138, 138, 138));
+        dis1.setBackground(new java.awt.Color(255, 255, 255));
+        dis1.setForeground(new java.awt.Color(255, 255, 255));
         dis1.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -203,7 +217,8 @@ public class StartUpWindow extends javax.swing.JFrame {
             public void mouseExited(MouseEvent e) {
             }
         });
-        dis2.setBackground(new java.awt.Color(138, 138, 138));
+        dis2.setBackground(new java.awt.Color(255, 255, 255));
+        dis2.setForeground(new java.awt.Color(255, 255, 255));
         GraphPanel.add(dis2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 150, 150));
 
         dis3.addMouseListener(new MouseListener() {
@@ -228,7 +243,8 @@ public class StartUpWindow extends javax.swing.JFrame {
             public void mouseExited(MouseEvent e) {
             }
         });
-        dis3.setBackground(new java.awt.Color(138, 138, 138));
+        dis3.setBackground(new java.awt.Color(255, 255, 255));
+        dis3.setForeground(new java.awt.Color(255, 255, 255));
         GraphPanel.add(dis3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 150, 150));
 
         dis4.addMouseListener(new MouseListener() {
@@ -253,7 +269,8 @@ public class StartUpWindow extends javax.swing.JFrame {
             public void mouseExited(MouseEvent e) {
             }
         });
-        dis4.setBackground(new java.awt.Color(138, 138, 138));
+        dis4.setBackground(new java.awt.Color(255, 255, 255));
+        dis4.setForeground(new java.awt.Color(255, 255, 255));
         GraphPanel.add(dis4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 20, 150, 150));
 
         dis5.addMouseListener(new MouseListener() {
@@ -278,7 +295,8 @@ public class StartUpWindow extends javax.swing.JFrame {
             public void mouseExited(MouseEvent e) {
             }
         });
-        dis5.setBackground(new java.awt.Color(138, 138, 138));
+        dis5.setBackground(new java.awt.Color(255, 255, 255));
+        dis5.setForeground(new java.awt.Color(255, 255, 255));
         GraphPanel.add(dis5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 150, 150));
 
         dis6.addMouseListener(new MouseListener() {
@@ -303,7 +321,8 @@ public class StartUpWindow extends javax.swing.JFrame {
             public void mouseExited(MouseEvent e) {
             }
         });
-        dis6.setBackground(new java.awt.Color(138, 138, 138));
+        dis6.setBackground(new java.awt.Color(255, 255, 255));
+        dis6.setForeground(new java.awt.Color(255, 255, 255));
         GraphPanel.add(dis6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 150, 150));
 
         dis7.addMouseListener(new MouseListener() {
@@ -328,7 +347,8 @@ public class StartUpWindow extends javax.swing.JFrame {
             public void mouseExited(MouseEvent e) {
             }
         });
-        dis7.setBackground(new java.awt.Color(138, 138, 138));
+        dis7.setBackground(new java.awt.Color(255, 255, 255));
+        dis7.setForeground(new java.awt.Color(255, 255, 255));
         GraphPanel.add(dis7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 150, 150));
 
         dis8.addMouseListener(new MouseListener() {
@@ -353,7 +373,8 @@ public class StartUpWindow extends javax.swing.JFrame {
             public void mouseExited(MouseEvent e) {
             }
         });
-        dis8.setBackground(new java.awt.Color(138, 138, 138));
+        dis8.setBackground(new java.awt.Color(255, 255, 255));
+        dis8.setForeground(new java.awt.Color(255, 255, 255));
         GraphPanel.add(dis8, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 150, 150));
 
         getContentPane().add(GraphPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 700, 360));
@@ -363,6 +384,43 @@ public class StartUpWindow extends javax.swing.JFrame {
         Logo.setMaximumSize(new java.awt.Dimension(864, 473));
         Logo.setMinimumSize(new java.awt.Dimension(864, 473));
         getContentPane().add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 500, 500));
+
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        winDisplay.setText("jTextField4");
+        jPanel1.add(winDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+
+        tf5.setText("jTextField5");
+        jPanel1.add(tf5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
+
+        tf6.setText("jTextField6");
+        jPanel1.add(tf6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+
+        tf7.setText("jTextField7");
+        jPanel1.add(tf7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
+
+        tf8.setText("jTextField8");
+        jPanel1.add(tf8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
+
+        tf9.setText("jTextField9");
+        jPanel1.add(tf9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+
+        jTextField4.setText("jTextField4");
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
+
+        jTextField5.setText("jTextField5");
+        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
+
+        jTextField6.setText("jTextField6");
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 150, 130, 360));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -399,6 +457,10 @@ public class StartUpWindow extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
 
     
     
@@ -454,9 +516,19 @@ public class StartUpWindow extends javax.swing.JFrame {
     private javax.swing.JLabel dis6;
     private javax.swing.JLabel dis7;
     private javax.swing.JLabel dis8;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JLabel screenHolder;
+    private javax.swing.JTextField tf5;
+    private javax.swing.JTextField tf6;
+    private javax.swing.JTextField tf7;
+    private javax.swing.JTextField tf8;
+    private javax.swing.JTextField tf9;
+    private javax.swing.JTextField winDisplay;
     // End of variables declaration//GEN-END:variables
 }
