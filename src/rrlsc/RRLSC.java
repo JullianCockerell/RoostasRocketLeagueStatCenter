@@ -8,8 +8,9 @@ public class RRLSC {
     {
         //testSerialize();
         //testDeserialize();
-        testStartWin();
+        //testStartWin();
         //testRecordAvg();
+        testGetRecord();
     }
    
     static public void testSerialize()
@@ -51,6 +52,13 @@ public class RRLSC {
         
         record1.printAvgs();
         record2.printAvgs();
+    }
+    
+    static public void testGetRecord()
+    {
+        RecordMap rec = new RecordMap();
+        RLRecord testRecord = rec.getRecord();
+        System.out.println(testRecord.toString());
     }
     
 }

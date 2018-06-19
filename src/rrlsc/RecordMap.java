@@ -10,30 +10,46 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.util.Collections;
 import java.util.HashMap;
 import javax.imageio.ImageIO;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import static java.lang.Math.toIntExact;
 
 /**
  *
  * @author julliancockerell
  */
-public class RecordMap {
-    HashMap recordMap;
-    int maxInt;
-    double[] avgStats;
+public class RecordMap implements Serializable {
+    HashMap recordMap; //hashmap of all added records
+    RLRecord orig; //first record from which all others are compared
+    int maxInt; //the number of records added, most recent key added
+    int gamesPlayed; //number of gamesplayed, updated on each record add
+    double[] avgStats; //array holding the current average stats for ALL records
     
+    //intializer
     public RecordMap()
     {
         recordMap = null;
+        orig = null;
         avgStats = new double[]{0,0,0,0,0,0};
         maxInt = 0;
+        gamesPlayed = 0;
     }
     
     //prints all values held in the avgStat array
@@ -44,6 +60,19 @@ public class RecordMap {
             System.out.print(avgStats[i] + " ");
         }
         System.out.println("");
+    }
+    
+    //sets orginal RLRecord from which all other are calculated, like this stats can be compared to an original copy
+    void setOrig()
+    {
+        if(orig == null)
+        {
+            orig = getRecord();
+        }
+        else
+        {
+            System.out.println("original record already set!");
+        }
     }
     
     //sets some basic template data for testing purposes
@@ -66,9 +95,110 @@ public class RecordMap {
         hashMap.put(6, six);
         hashMap.put(7, seven);
         hashMap.put(8, eight);
+        orig = new RLRecord(918, 1872, 341, 2119, 4042, 941, 706, 0, 0, 1164, 0, 0, 1169, 0, 0);
         recordMap = hashMap;
         maxInt = 8;
+        setupAvgStats();
+        gamesPlayed = 8;
     }
+    
+    //returns an RLRecord retrieved from
+    RLRecord getRecord()
+    {
+       //steam id: 76561198068821663
+       //game id: 1
+       //API Key: MF3US9NVKJ7D53EN2AO6FHFJCO7TZ8BP
+       String jsonOutput= "Didn't assign";
+       try
+        {
+            URL url = new URL("https://api.rocketleaguestats.com/v1/player?unique_id=76561198068821663&platform_id=1");
+            //URL url = new URL("https://api.rocketleaguestats.com/v1/player?unique_id=Pouchetta&platform_id=1");
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+            con.setRequestProperty("Authorization", "MF3US9NVKJ7D53EN2AO6FHFJCO7TZ8BP");
+            con.connect();
+            BufferedReader in = new BufferedReader(
+            new InputStreamReader(con.getInputStream()));
+            String inputLine;
+            StringBuffer content = new StringBuffer();
+            while ((inputLine = in.readLine()) != null) 
+            {
+                content.append(inputLine);
+            }
+            in.close();
+            jsonOutput = content.toString();
+        }
+       catch(MalformedURLException e)
+        {
+            System.out.println("Malformed Error");
+        }
+       catch(ProtocolException e)
+       {
+           System.out.println("Protocol Error");
+       }
+       catch(IOException e)
+       {
+           System.out.println("IOException");
+       }
+       //Prints response to GET request>
+       //System.out.println(jsonOutput);
+       JSONParser parser = new JSONParser();
+      
+        String uniqueId = " ";
+        String displayName = " ";
+        String platform = " ";
+        int wins = 0;
+        int goals = 0;
+        int mvps = 0;
+        int saves = 0;
+        int shots = 0;
+        int assists = 0;
+        int sRankPoints = 0;
+        int sTier = 0;
+        int sDiv = 0;
+        int dRankPoints = 0;
+        int dTier = 0;
+        int dDiv = 0;
+        int tRankPoints = 0;
+        int tTier = 0;
+        int tDiv = 0;
+       try
+       {
+            JSONObject playerInfo = (JSONObject) parser.parse(jsonOutput);
+            uniqueId = (String) playerInfo.get("uniqueId");
+            displayName = (String) playerInfo.get("displayName");
+            JSONObject platformInfo = (JSONObject) playerInfo.get("platform");
+            platform = (String) platformInfo.get("name");
+            JSONObject stats = (JSONObject) playerInfo.get("stats");
+            wins = toIntExact((long)stats.get("wins"));
+            goals =  toIntExact((long) stats.get("goals"));
+            mvps = toIntExact((long) stats.get("mvps"));
+            saves = toIntExact((long) stats.get("saves"));
+            shots = toIntExact((long) stats.get("shots"));
+            assists = toIntExact((long) stats.get("assists"));
+            JSONObject rankedStats = (JSONObject) playerInfo.get("rankedSeasons");
+            JSONObject season7 = (JSONObject) rankedStats.get("7"); 
+            JSONObject soloStats = (JSONObject) season7.get("10");
+            JSONObject duoStats = (JSONObject) season7.get("11");
+            JSONObject stanStats = (JSONObject) season7.get("13");
+            sRankPoints = toIntExact((long)soloStats.get("rankPoints"));
+            dRankPoints = toIntExact((long)duoStats.get("rankPoints"));
+            tRankPoints = toIntExact((long)stanStats.get("rankPoints"));
+            sTier =  toIntExact((long)soloStats.get("tier"));
+            dTier =  toIntExact((long)duoStats.get("tier"));
+            tTier =  toIntExact((long)stanStats.get("tier"));
+            sDiv =  toIntExact((long)soloStats.get("division"));
+            dDiv =  toIntExact((long)duoStats.get("division"));
+            tDiv =  toIntExact((long)stanStats.get("division"));
+       }
+       catch(ParseException e)
+       {
+           System.out.println("Parse Error");
+       }
+       
+       RLRecord p1 = new RLRecord(wins, goals, mvps, saves, shots, assists, sRankPoints, sTier, sDiv, dRankPoints, dTier, dDiv, tRankPoints, tTier, tDiv);
+       return p1;
+    }  
     
     //Converts HashMap object into serialized object in file "records.ser"
     boolean serializeMap(HashMap map)
